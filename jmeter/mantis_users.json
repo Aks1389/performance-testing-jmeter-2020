@@ -1,0 +1,30 @@
+[
+	{
+		"testers": [
+			{
+				"login": "tester01",
+				"password": "Hgir944"
+			},
+			{
+				"login": "tester02",
+				"password": "n&fneer"
+			}
+		]
+	},
+	{
+		"developers": [
+			{
+				"login": "dev01",
+				"password": "Koe9*F"
+			},
+			{
+				"login": "dev02",
+				"password": "Swq2r)(*"
+			},
+			{
+				"login": "dev03",
+				"password": "JSUwi22"
+			}
+		]
+	}
+]
