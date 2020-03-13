@@ -183,7 +183,7 @@
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer&#x9;http" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost/mantisbt-2.23.0/login_page.php?return=%2Fmantisbt-2.23.0%2Fmy_view_page.php</stringProp>
+                    <stringProp name="Header.value">http://${mantis_host}/login_page.php?return=%2F${mantis_name}%2Fmy_view_page.php</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -269,7 +269,7 @@
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer&#x9;http" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost/mantisbt-2.23.0/login_password_page.php</stringProp>
+                    <stringProp name="Header.value">http://${mantis_host}/login_password_page.php</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
