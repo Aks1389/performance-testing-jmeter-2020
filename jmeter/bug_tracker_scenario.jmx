@@ -74,17 +74,8 @@
           </ModuleController>
           <hashTree/>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Submit a bug" enabled="false"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Submit a bug" enabled="true"/>
         <hashTree>
-          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable" enabled="true">
-            <stringProp name="maximumValue"></stringProp>
-            <stringProp name="minimumValue">1</stringProp>
-            <stringProp name="outputFormat"></stringProp>
-            <boolProp name="perThread">false</boolProp>
-            <stringProp name="randomSeed"></stringProp>
-            <stringProp name="variableName"></stringProp>
-          </RandomVariableConfig>
-          <hashTree/>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get bug report token" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
@@ -133,44 +124,11 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <XPath2Extractor guiclass="XPath2ExtractorGui" testclass="XPath2Extractor" testname="XPath2 Extractor - Get token" enabled="false">
-              <stringProp name="XPathExtractor2.default"></stringProp>
-              <stringProp name="XPathExtractor2.refname">BUG_REPORT_TOKEN</stringProp>
-              <stringProp name="XPathExtractor2.matchNumber">1</stringProp>
-              <stringProp name="XPathExtractor2.xpathQuery">//input[@name = &apos;bug_report_token&apos;]</stringProp>
-              <stringProp name="XPathExtractor2.namespaces"></stringProp>
-            </XPath2Extractor>
-            <hashTree/>
-            <XPath2Extractor guiclass="XPath2ExtractorGui" testclass="XPath2Extractor" testname="XPath2 Extractor - Get m_id" enabled="false">
-              <stringProp name="XPathExtractor2.default"></stringProp>
-              <stringProp name="XPathExtractor2.refname">M_ID</stringProp>
-              <stringProp name="XPathExtractor2.matchNumber">1</stringProp>
-              <stringProp name="XPathExtractor2.xpathQuery">//input[@name = &apos;m_id&apos;]</stringProp>
-              <stringProp name="XPathExtractor2.namespaces"></stringProp>
-            </XPath2Extractor>
-            <hashTree/>
-            <XPath2Extractor guiclass="XPath2ExtractorGui" testclass="XPath2Extractor" testname="XPath2 Extractor - Get project_id" enabled="false">
-              <stringProp name="XPathExtractor2.default"></stringProp>
-              <stringProp name="XPathExtractor2.refname">PROJECT_ID</stringProp>
-              <stringProp name="XPathExtractor2.matchNumber">1</stringProp>
-              <stringProp name="XPathExtractor2.xpathQuery">//input[@name = &apos;project_id&apos;]</stringProp>
-              <stringProp name="XPathExtractor2.namespaces"></stringProp>
-            </XPath2Extractor>
-            <hashTree/>
-            <XPath2Extractor guiclass="XPath2ExtractorGui" testclass="XPath2Extractor" testname="XPath2 Extractor - Get reproducibility options" enabled="false">
-              <stringProp name="XPathExtractor2.default"></stringProp>
-              <stringProp name="XPathExtractor2.refname">REPR_OPTIONS</stringProp>
-              <stringProp name="XPathExtractor2.matchNumber">-1</stringProp>
-              <stringProp name="XPathExtractor2.xpathQuery">//select[@id = &apos;reproducibility&apos;]/option</stringProp>
-              <stringProp name="XPathExtractor2.namespaces"></stringProp>
-              <boolProp name="XPathExtractor2.fragment">true</boolProp>
-            </XPath2Extractor>
-            <hashTree/>
             <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="XPath Extractor - Get token" enabled="true">
               <stringProp name="XPathExtractor.default"></stringProp>
               <stringProp name="XPathExtractor.refname">BUG_REPORT_TOKEN</stringProp>
               <stringProp name="XPathExtractor.matchNumber">1</stringProp>
-              <stringProp name="XPathExtractor.xpathQuery">//input[@name = &apos;bug_report_token&apos;]</stringProp>
+              <stringProp name="XPathExtractor.xpathQuery">//input[@name = &apos;bug_report_token&apos;]/@value</stringProp>
               <boolProp name="XPathExtractor.validate">false</boolProp>
               <boolProp name="XPathExtractor.tolerant">true</boolProp>
               <boolProp name="XPathExtractor.namespace">false</boolProp>
@@ -182,7 +140,7 @@
               <stringProp name="XPathExtractor.default"></stringProp>
               <stringProp name="XPathExtractor.refname">M_ID</stringProp>
               <stringProp name="XPathExtractor.matchNumber">1</stringProp>
-              <stringProp name="XPathExtractor.xpathQuery">//input[@name = &apos;m_id&apos;]</stringProp>
+              <stringProp name="XPathExtractor.xpathQuery">//input[@name = &apos;m_id&apos;]/@value</stringProp>
               <boolProp name="XPathExtractor.validate">false</boolProp>
               <boolProp name="XPathExtractor.tolerant">true</boolProp>
               <boolProp name="XPathExtractor.namespace">false</boolProp>
@@ -194,7 +152,7 @@
               <stringProp name="XPathExtractor.default"></stringProp>
               <stringProp name="XPathExtractor.refname">PROJECT_ID</stringProp>
               <stringProp name="XPathExtractor.matchNumber">1</stringProp>
-              <stringProp name="XPathExtractor.xpathQuery">//input[@name = &apos;project_id&apos;]</stringProp>
+              <stringProp name="XPathExtractor.xpathQuery">//input[@name = &apos;project_id&apos;]/@value</stringProp>
               <boolProp name="XPathExtractor.validate">false</boolProp>
               <boolProp name="XPathExtractor.tolerant">true</boolProp>
               <boolProp name="XPathExtractor.namespace">false</boolProp>
@@ -215,7 +173,7 @@
             </XPathExtractor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Submit" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Submit" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="bug_report_token" elementType="HTTPArgument">
@@ -267,27 +225,6 @@
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 </elementProp>
-                <elementProp name="platform" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.name">platform</stringProp>
-                  <stringProp name="Argument.value"></stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                </elementProp>
-                <elementProp name="os" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.name">os</stringProp>
-                  <stringProp name="Argument.value"></stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                </elementProp>
-                <elementProp name="os_build" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.name">os_build</stringProp>
-                  <stringProp name="Argument.value"></stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                </elementProp>
                 <elementProp name="summary" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.name">summary</stringProp>
@@ -317,27 +254,6 @@ text</stringProp>
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.name">additional_info</stringProp>
                   <stringProp name="Argument.value">additional</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                </elementProp>
-                <elementProp name="tag_string" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.name">tag_string</stringProp>
-                  <stringProp name="Argument.value"></stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                </elementProp>
-                <elementProp name="tag_select" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.name">tag_select</stringProp>
-                  <stringProp name="Argument.value">0</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                </elementProp>
-                <elementProp name="max_file_size" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.name">max_file_size</stringProp>
-                  <stringProp name="Argument.value">2097152</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 </elementProp>
@@ -404,7 +320,7 @@ text</stringProp>
             <stringProp name="variableName">RANDOM_REPR</stringProp>
             <stringProp name="outputFormat"></stringProp>
             <stringProp name="minimumValue">1</stringProp>
-            <stringProp name="maximumValue">2</stringProp>
+            <stringProp name="maximumValue">${REPR_OPTIONS_matchNr}</stringProp>
             <stringProp name="randomSeed"></stringProp>
             <boolProp name="perThread">true</boolProp>
           </RandomVariableConfig>
