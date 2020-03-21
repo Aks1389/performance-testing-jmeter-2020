@@ -32,6 +32,12 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+        <boolProp name="CookieManager.controlledByThreadGroup">true</boolProp>
+      </CookieManager>
+      <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Tester creates a bug" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -43,15 +49,9 @@
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
-        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
       </ThreadGroup>
       <hashTree>
-        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
-          <collectionProp name="CookieManager.cookies"/>
-          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
-          <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
-        </CookieManager>
-        <hashTree/>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Tester creates a bug" enabled="true"/>
         <hashTree>
           <kg.apc.jmeter.control.ParameterizedController guiclass="kg.apc.jmeter.control.ParameterizedControllerGui" testclass="kg.apc.jmeter.control.ParameterizedController" testname="jp@gc - Parameterized Controller - Login" enabled="true">
@@ -410,7 +410,7 @@ vars.put(&quot;stepsToReproduce&quot;, str);</stringProp>
             </ModuleController>
             <hashTree/>
           </hashTree>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Extract bug number from variable" enabled="true">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
